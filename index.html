@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Main page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    .row.content {height: 450px}
+
+    .sidenav {
+      padding-top: 20px;
+      background-color: #bdfeff;
+      height: 170%;
+    }
+
+    footer {
+      background-color: rgb(255, 190, 190);
+      color: white;
+      padding: 15px;
+    }
+
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+
+      #cb {
+      border-style: outset;
+      background-color: rgb(26, 0, 48);
+      color: rgb(191, 233, 253);
+      border-color: rgb(211, 249, 248);
+    }
+    }
+
+    .l_b {
+      width: 200px;
+    }
+
+    #cb {
+      border-style: outset;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      background-color: rgb(40, 3, 51);
+      color: rgb(218, 255, 254);
+      border-color: rgb(234, 252, 255);
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="myprofile.html">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="myproducts">MyProducts</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="cb" href="/info">CB</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="createacc.html"><span></span> Create Account</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <a class="btn btn-default well l_b" href="buyproduct.html" role="button">Buy product</a>
+      <a class="btn btn-default well l_b" href="payfororder.html" role="button">Pay for order</a>
+      <a class="btn btn-default well l_b" href="updateprofile.html" role="button">Update profile</a>
+    </div>
+    <div class="col-sm-8 text-left">
+      <h1>Вітаю в інтернет магазині</h1>
+      <p>Вам потрібно щось купити? Ви прийшли куди треба! Вітаю в найкращому інтернет магазині.</p>
+      <hr>
+      <h3>Інструкція</h3>
+      <p>Щоб щось купити не забудьте зареєструватися в нас на сайті! Коли ви купуєте продукт зявиться в вашому кошику</p>
+      <hr>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="buyproduct.html" target="_blank">
+              <img src="product.jpg" alt="banknote" style="width:100%">
+              <div class="caption">
+                <p>Вибери продукт.(firstly login)</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="payfororder.html" target="_blank">
+              <img src="/money.jpeg" alt="burning_dolar" style="width:100%">
+              <div class="caption">
+                <p>Оплати замовлення.(firstly login)</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="updateprofile.html" target="_blank">
+              <img src="profile.jpeg" alt="Profile picture" style="width:100%">
+              <div class="caption">
+                <p>Онови профіль.(firstly login)</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Error!</strong> A problem has been occurred while submitting your data.
+      </div>
+      <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Error!</strong> You are not logged in. Firstly log in.
+      </div>
+      <div class="alert alert-warning fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Error!</strong> Can`t find this user.
+      </div>
+      <div class="alert alert-warning fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Error!</strong> You can`t do it. You are not manager.
+      </div>
+      <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Success!</strong> The process was successful.
+      </div>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="border-top border-5 text-muted py-5">
+        <div class="container">
+            <p class="mb-1">Якщо є запитання пишіть <a href="mailto:maria.and.glad@gmail.com">maria.and.glad@gmail.com</a></p>
+            <p class="mb-0">Гладштейн Марія</p>
+          <p class="float-end mb-1">
+            <a href="#">Back to top</a>
+          </p>
+        </div>
+</footer>
+
+</body>
+</html>

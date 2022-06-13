@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Repaycredit page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    .row.content {height: 450px}
+
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 170%;
+    }
+
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+
+    .l_b {
+      width: 200px;
+    }
+
+    .credit {
+      width: 100%;
+      margin: auto;
+      background-color: #f1f1f1;
+      padding: 5px;
+      margin-top: 20px;
+    }
+
+    #hrhr {
+      margin-top: 30px;
+      border: none;
+      border-top: 3px double #333;
+      color: #333;
+      overflow: visible;
+      text-align: center;
+      height: 5px;
+    }
+
+    #hrhr:after {
+      background: #fff;
+      border: solid;
+      border-color: #333333;
+      content: '$';
+      padding: 0 4px;
+      position: relative;
+      top: -13px;
+    }
+
+    #blank1 {
+      width: 65%;
+      margin: auto;
+    }
+
+    #cb {
+      border-style: outset;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      background-color: black;
+      color: aliceblue;
+      border-color: aliceblue;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="myprofile.html">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="myproducts">MyProducts</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="cb" href="/info">CB</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="createacc.html"><span></span> Create Account</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <a class="btn btn-default well l_b" href="buyproduct.html" role="button">Buy product</a>
+      <a class="btn btn-default well l_b" href="payfororder.html" role="button">Pay for order</a>
+      <a class="btn btn-default well l_b" href="updateprofile.html" role="button">Update profile</a>
+    </div>
+    <div class="col-sm-8 text-left">
+      <h2 style="margin-left: 1.5%;">Here you can repay or partially repay your credit.</h2>
+      <hr>
+      <div id="blank1">
+        <div class="panel panel-default credit">
+          <div class="panel-body">
+            <img src="profile.jpeg" alt="Profile picture" style="width:25%; margin-left: 8%;" class="img-circle">
+            <div style="margin-left: 44%; margin-top: -25%;">
+              <strong>Credit</strong>
+              <h5>Статус покупки: статпок</h5>
+              <h5>Назва покупки: назва</h5>
+              <h5>Кількість: кількість</h5>
+            </div>
+            <hr id="hrhr">
+        <form class="form-horizontal" action="/action_page.php">
+        <div class="form-group">
+          <label class="control-label col-sm-5" for="amount">Ціна:</label>
+          <div class="col-sm-7">
+            <input class="form-control" id="amount" placeholder="Ціна" name="amount">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-5" for="email">Email:</label>
+          <div class="col-sm-7">
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-7">
+            <button type="submit" class="btn btn-default" style="margin-left: 47%;">Submit</button>
+          </div>
+        </div>
+        </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="border-top border-5 text-muted py-5">
+        <div class="container">
+            <p class="mb-1">Якщо є запитання пишіть <a href="mailto:maria.and.glad@gmail.com">maria.and.glad@gmail.com</a></p>
+            <p class="mb-0">Гладштейн Марія</p>
+          <p class="float-end mb-1">
+            <a href="#">Back to top</a>
+          </p>
+        </div>
+</footer>
+
+</body>
+</html>
