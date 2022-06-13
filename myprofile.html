@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Takecredit page</title>
+  <title>Profile page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
     }
 
     footer {
-      background-color: #555;
+      background-color: rgb(255, 190, 190);
       color: white;
       padding: 15px;
     }
@@ -39,13 +39,38 @@
       width: 200px;
     }
 
+    #hrhr {
+      margin-top: 30px;
+      border: none;
+      border-top: 3px double rgb(51, 61, 63);
+      color: rgb(45, 56, 61);
+      overflow: visible;
+      text-align: center;
+      height: 5px;
+    }
+
+    #hrhr:after {
+      background: #fff;
+      border: solid;
+      border-color: #282e34;
+      content: 'PROFILE';
+      padding: 0 4px;
+      position: relative;
+      top: -13px;
+    }
+
+    .btnlogout {
+      margin-bottom: 15px;
+      padding: 3px;
+    }
+
     #cb {
       border-style: outset;
       padding-top: 20%;
       padding-bottom: 20%;
       background-color: black;
-      color: aliceblue;
-      border-color: aliceblue;
+      color: rgb(215, 247, 249);
+      border-color: rgb(217, 251, 250);
     }
 
   </style>
@@ -61,7 +86,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="myprofile.html">Logo</a>
+      <a style="color: aliceblue; background-color: black" class="navbar-brand" href="myprofile.html">Logo</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -90,43 +115,24 @@
       <a class="btn btn-default well l_b" href="updateprofile.html" role="button">Update profile</a>
     </div>
     <div class="col-sm-8 text-left">
-        <h1>Ти можеш тут обрати продукт</h1>
-        <form class="form-horizontal" action="/action_page.php">
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="name">Назва продукту:</label>
-          <div class="col-sm-10">
-            <input class="form-control" id="name" placeholder="Enter product name" name="name">
-          </div>
+      <h2>Information about your account</h2>
+      <div class="panel panel-default" style='width: 50%; margin: auto; background-color: #f1f1f1;' >
+      <div class="panel-body">
+        <img src="profile.jpeg" alt="Profile picture" style="width:20%;" class="col-sm-2 sidenav">
+        <div class="col-sm-8 sidenav">
+          <h5>USERNAME: username</h5>
+          <h5>EMAIL: email.gmail.com</h5>
+          <h5>FirstName: firstname</h5>
+          <h5>LastName: lastname</h5>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="amount">Кількість:</label>
-          <div class="col-sm-10">
-            <input class="form-control" id="amount" placeholder="amount" name="amount">
-          </div>
+      </div>
+        <hr id="hrhr">
+        <div class="container-fluid text-center">
+          <a class="col-sm-3 btn btn-warning btnlogout" href="updateprofile.html" role="button">Update Profile</a>
+          <div class="col-sm-6"></div>
+          <a class="col-sm-3 btn btn-default btnlogout" role="button">Logout</a>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="email">Email:</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="choose">Статус купівлі:</label>
-          <form id="choose">
-            <label class="radio-inline">
-              <input type="radio" name="optradio" checked>True
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="optradio">False
-            </label>
-          </form>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Submit</button>
-          </div>
-        </div>
-        </form>
+      </div>
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">

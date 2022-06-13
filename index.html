@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Takecredit page</title>
+  <title>Main page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
     }
 
     footer {
-      background-color: #555;
+      background-color: rgb(255, 190, 190);
       color: white;
       padding: 15px;
     }
@@ -33,6 +33,13 @@
         padding: 15px;
       }
       .row.content {height:auto;}
+
+      #cb {
+      border-style: outset;
+      background-color: rgb(26, 0, 48);
+      color: rgb(191, 233, 253);
+      border-color: rgb(211, 249, 248);
+    }
     }
 
     .l_b {
@@ -43,9 +50,9 @@
       border-style: outset;
       padding-top: 20%;
       padding-bottom: 20%;
-      background-color: black;
-      color: aliceblue;
-      border-color: aliceblue;
+      background-color: rgb(40, 3, 51);
+      color: rgb(218, 255, 254);
+      border-color: rgb(234, 252, 255);
     }
 
   </style>
@@ -65,7 +72,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="/">Home</a></li>
+        <li class="active"><a href="/">Home</a></li>
         <li><a href="myproducts">MyProducts</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -90,43 +97,64 @@
       <a class="btn btn-default well l_b" href="updateprofile.html" role="button">Update profile</a>
     </div>
     <div class="col-sm-8 text-left">
-        <h1>Ти можеш тут обрати продукт</h1>
-        <form class="form-horizontal" action="/action_page.php">
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="name">Назва продукту:</label>
-          <div class="col-sm-10">
-            <input class="form-control" id="name" placeholder="Enter product name" name="name">
+      <h1>Вітаю в інтернет магазині</h1>
+      <p>Вам потрібно щось купити? Ви прийшли куди треба! Вітаю в найкращому інтернет магазині.</p>
+      <hr>
+      <h3>Інструкція</h3>
+      <p>Щоб щось купити не забудьте зареєструватися в нас на сайті! Коли ви купуєте продукт зявиться в вашому кошику</p>
+      <hr>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="buyproduct.html" target="_blank">
+              <img src="product.jpg" alt="banknote" style="width:100%">
+              <div class="caption">
+                <p>Вибери продукт.(firstly login)</p>
+              </div>
+            </a>
           </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="amount">Кількість:</label>
-          <div class="col-sm-10">
-            <input class="form-control" id="amount" placeholder="amount" name="amount">
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="payfororder.html" target="_blank">
+              <img src="/money.jpeg" alt="burning_dolar" style="width:100%">
+              <div class="caption">
+                <p>Оплати замовлення.(firstly login)</p>
+              </div>
+            </a>
           </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="email">Email:</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="updateprofile.html" target="_blank">
+              <img src="profile.jpeg" alt="Profile picture" style="width:100%">
+              <div class="caption">
+                <p>Онови профіль.(firstly login)</p>
+              </div>
+            </a>
           </div>
         </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="choose">Статус купівлі:</label>
-          <form id="choose">
-            <label class="radio-inline">
-              <input type="radio" name="optradio" checked>True
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="optradio">False
-            </label>
-          </form>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Submit</button>
-          </div>
-        </div>
-        </form>
+      </div>
+      <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Error!</strong> A problem has been occurred while submitting your data.
+      </div>
+      <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Error!</strong> You are not logged in. Firstly log in.
+      </div>
+      <div class="alert alert-warning fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Error!</strong> Can`t find this user.
+      </div>
+      <div class="alert alert-warning fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Error!</strong> You can`t do it. You are not manager.
+      </div>
+      <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Success!</strong> The process was successful.
+      </div>
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
