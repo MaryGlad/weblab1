@@ -1,144 +1,115 @@
-let token = null;
+import axios from "axios";
 
-function sendRequest(method, url, body = null) {
-	  return new Promise((resolve, reject) => {
-	    const xhr = new XMLHttpRequest();
 
-	    xhr.open(method, url);
 
-	    xhr.responseType = "json";
 
-	    xhr.setRequestHeader("Content-Type", "application/json");
-	    xhr.setRequestHeader("Accept", "application/json");
-	    xhr.setRequestHeader("x-access-tokens", token);
+const getBtn = document.getElementById('get-btn');
 
-	    xhr.onload = () => {
-	      if (xhr.status >= 400) {
-	        reject(xhr.response);
-	      } else {
-	        resolve(xhr.response);
-	      }
-	    };
+const postBtn = document.getElementById('post-btn');
 
-	    xhr.onerror = () => {
-	      reject(xhr.response);
-	    };
+const putBtn = document.getElementById('put-btn');
 
-	    xhr.send(JSON.stringify(body));
-	  });
-}
+const deleteBtn = document.getElementById('delete-btn');
 
-let userId = 1;
-let creditId = 1;
 
-const register = 'http://127.0.0.1:5000/user';
-const logn = 'http://127.0.0.1:5000//user/lordr3s';
-const Credit = 'http://127.0.0.1:5000/product';
-const UserCredit = 'http://127.0.0.1:5000/product';
-const User = 'http://127.0.0.1:5000/user';
 
-const user = {
-	username: "oleksiy",
-	password: "1234567890",
-	clientName: "vstoleksiy",
-	firstName: "Oleksiy",
-	lastName: "Vasiuta",
-};
 
-const userupd = {
-	username: "",
-	password: "",
-	clientName: "vstoleksiy@gmail.com",
-	firstName: "Oleksii",
-	lastName: "Vasiuta",
-}
+let userId = null;
 
-const loguser = {
-	username: "lordr3s",
-	password: "1111"
-};
+
+
+
+const requestURL = 'http://127.0.0.1:5000/product';
+
+
+
 
 const product = {
-	  id: "3",
-	  name: "Apple",
-	  status: "available",
+    id: "1",
+    name: "Mario",
+    status: "available",
 }
 
-const creditupd = {
-	id: "1",
-	name: "Mario",
-	status: "unavailable",
+
+
+
+const product_ch = {
+    id: "1",
+    name: "Mario",
+    status: "available",
 }
 
-	const order = {
-	  user_id: 1,
-	  product_id: 3
-	}
 
-	sendRequest("POST", register, user)
-	  .then((data) => console.log(data))
-	  .catch((err) => console.log(err));
 
-	sendRequest("POST", logn, loguser)
-	    .then((data) => {
-	      token = data.token.slice(2, -1);
-	      console.log(data)})
-	    .catch((err) => console.log(err));
 
-	setTimeout(() => {
-	  sendRequest("POST", Credit, product)
-	    .then((data) => {
-	      console.log(data);
-	    })
-	    .catch((err) => console.log(err));
-	}, 1000);
+const getData = () => {
 
-	setTimeout(() => {
-	  sendRequest("GET", Credit)
-	    .then((data) => {
-	      console.log(data);
-	    })
-	    .catch((err) => console.log(err));
-	}, 1000);
+    axios.get(`${requestURL}`).then((data) => {
 
-	setTimeout(() => {
-	  sendRequest("POST", UserCredit + '/' + creditId + '/' + userId, order)
-	    .then((data) => console.log(data))
-	    .catch((err) => console.log(err))
-	}, 2000);
+        userId = data.data.id;
 
-	setTimeout(() => {
-	  sendRequest("GET", UserCredit)
-	    .then((data) => console.log(data))
-	    .catch((err) => console.log(err))
-	}, 2000);
+        console.log(data);
 
-	setTimeout(() => {
-	  sendRequest("DELETE", UserCredit + '/' + creditId + '/' + userId)
-	    .then((data) => console.log(data))
-	    .catch((err) => console.log(err))
-	}, 2000);
+    })
 
-	setTimeout(() => {
-	  sendRequest("PUT", Credit + '/' + creditId, creditupd)
-	    .then((data) => console.log(data))
-	    .catch((err) => console.log(err))
-	}, 2000);
+        .catch((err) => console.log(err));
 
-	setTimeout(() => {
-	  sendRequest("DELETE", Credit + '/' + creditId)
-	    .then((data) => console.log(data))
-	    .catch((err) => console.log(err))
-	}, 2000);
+};
 
-	setTimeout(() => {
-	  sendRequest("GET", User)
-	    .then((data) => console.log(data))
-	    .catch((err) => console.log(err))
-	}, 2000);
 
-	setTimeout(() => {
-	  sendRequest("PUT", User, userupd)
-	    .then((data) => console.log(data))
-	    .catch((err) => console.log(err))
-	}, 2000);
+
+
+const sendData = () => {
+
+    axios.post(requestURL, product).then((data) => {
+
+        console.log(data);
+
+    })
+
+        .catch((err) => console.log(err));
+
+};
+
+
+
+
+const putData = () => {
+
+    axios.put(`${requestURL}/${userId}`, userChanged).then((data) => {
+
+        console.log(data);
+
+    })
+
+        .catch((err) => console.log(err));
+
+};
+
+
+
+
+const deleteData = () => {
+
+    axios.delete(`${requestURL}/1`).then((data) => {
+
+        userId = data.is;
+
+        console.log(data);
+
+    })
+
+        .catch((err) => console.log(err));
+
+};
+
+
+
+
+getBtn.addEventListener('click', getData);
+
+postBtn.addEventListener('click', sendData);
+
+putBtn.addEventListener('click', putData);
+
+deleteBtn.addEventListener('click', deleteData);
